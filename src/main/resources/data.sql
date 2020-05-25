@@ -1,5 +1,30 @@
-INSERT INTO recipe(id, title, portions, time, instruction, author, IMAGE_URL, likes, category, level) VALUES (1, 'Kanapki', 2, 20, 'Posmaruj kanapki masłem, nałóż ser', 'Michał', 'http://img4.garnek.pl/a.garnek.pl/031/265/31265395_800.0.jpg/kanapki-z-serem-i-pomidorem.jpg', 4, 'DINNER', 'EASY');
-
-INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (1, 'Chleb', 200, 'g', 1);
-INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (2, 'Pomidor', 1, 'piece', 1);
-
+-- INSERT INTO recipe(id, title, portions, time, instruction, author, IMAGE_URL, likes, AMOUNT_OF_INGREDIENTS, ADD_OR_EDIT_DATE, category, level) VALUES (1, 'Kanapki', 2, 20, 'Posmaruj kanapki masłem, nałóż ser', 'Michał', 'http://img4.garnek.pl/a.garnek.pl/031/265/31265395_800.0.jpg/kanapki-z-serem-i-pomidorem.jpg', 4, 2, '2020-04-06', 'DINNER', 'EASY');
+--
+-- INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (1, 'Chleb', 200, 'g', 1);
+-- INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (2, 'Pomidor', 1, 'piece', 1);
+--
+-- INSERT INTO recipe(id, title, portions, time, instruction, author, IMAGE_URL, likes, AMOUNT_OF_INGREDIENTS, ADD_OR_EDIT_DATE, category, level) VALUES (2, 'Makaron w sosie pieczarkowym', 4, 20, 'Posiekaj cebulę w kostkę. Pokrój kurczaka w paski, a grzyby w plasterki. Ugotuj makaron wg wskazówek na opakowaniu. Wymieszaj Fix Knorr z mlekiem i musztardą. Usmaż grzyby na 1 łyżce oleju. Odłóż na talerz, a następnie usmaż osobno cebulę. Dodaj kurczaka i przesmaż na złoto. Przełóż grzyby na patelnię. Całość połącz z sosem. Gotuj przez 5 min. aż lekko zgęstnieje. Podawaj makaron posypany posiekaną natką pietruszki. ', 'Pani Basia', 'https://s3.przepisy.pl/przepisy3ii/img/variants/800x0/cheesy-chicken-and-pasta_a9727.jpg', 40, 9, '2020-20-05', 'DINNER', 'EASY');
+-- INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (3, 'Filet z piersi kurczaka', 500, 'g', 2);
+-- INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (4, 'Fix świderki Knorr', 1, 'piece', 2);
+-- INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (5, 'Makaron taglitalle', 250, 'g', 2);
+-- INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (6, 'Pieczarki', 500, 'g', 2);
+-- INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (7, 'Mleko', 150, 'ml', 2);
+-- INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (8, 'Cebula', 1, 'piece', 2);
+-- INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (9, 'Musztarda', 2, 'spoon', 2);
+-- INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (10, 'Natka pietruszki', 2, 'spoon', 2);
+-- INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (11, 'Olej rzepakowy', 1, 'spoon', 2);
+--
+--
+-- INSERT INTO recipe(id, title, portions, time, instruction, author, IMAGE_URL, likes, AMOUNT_OF_INGREDIENTS, ADD_OR_EDIT_DATE, category, level) VALUES (3, 'Muffinki a la pizza', 10, 90, 'Cukier, sól i drożdże rozpuść w ciepłej wodzie. Powstały płyn połącz mąką, jajkiem i majonezem. Dokładnie wyrób ciasto tak, aby było elastyczne i gładkie. Jeśli ciasto będzie zbyt luźne, dodaj więcej mąki i podobnie jeśli będzie zbyt twarde, dodaj odrobinę więcej wody. Ciasto przełóż do miski, przykryj ściereczką i odstaw na około 60 minut w ciepłe miejsce, aby wyrosło. Kiełbasę pokrój w plasterki – podsmaż ją na patelni tak, aby się wytopiło z niej trochę tłuszczu. Ciasto delikatnie pomieszaj z serem mozarella, kiełbasą razem z tłuszczem, pokrojonymi oliwkami i ziołami Knorr. Powstałą w ten sposób mieszankę rozłóż do foremek na muffinki wcześniej wysmarowanych olejem. Całość wstaw do nagrzanego do 180*C piekarnika na około 20 minut. Podawaj z dipem czosnkowym.', 'Krystyna', 'https://i.ytimg.com/vi/TNkA00Dx7Mw/maxresdefault.jpg', 45, 12, '2020-20-04', 'DINNER', 'EASY');
+-- INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (12, 'Mąka', 2, 'glass', 3);
+-- INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (13, 'Suche drożdże', 7, 'g', 3);
+-- INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (14, 'Majonez Hellmanns', 4, 'spoon', 3);
+-- INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (15, 'Ciepła woda', 0.5, 'glass', 3);
+-- INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (16, 'Jajko', 1, 'piece', 3);
+-- INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (17, 'Sól', 1, 'pinch', 3);
+-- INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (18, 'Cukier', 1, 'teaspoon', 3);
+-- INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (19, 'Tarta mozzarella', 0.5, 'glass', 3);
+-- INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (20, 'Starty parmezan', 3, 'spoon', 3);
+-- INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (21, 'Kiełbasa chorizo pikantna', 200, 'g', 3);
+-- INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (22, 'Oliwki zielone', 100, 'g', 3);
+-- INSERT INTO ingredient(id, name, quantity, unit, recipe_id) VALUES (23, 'Miszanka ziół i przypraw Zioła prowansalskie Knorr', 1, 'spoon', 3);

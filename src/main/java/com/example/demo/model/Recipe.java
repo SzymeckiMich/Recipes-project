@@ -32,11 +32,26 @@ public class Recipe {
     @Enumerated(value = EnumType.STRING)
     private DifficultyLevel level;
 
-    @OneToMany(mappedBy="recipe", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "recipe", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     private List<Ingredient> ingredients;
 
     public Recipe() {
     }
+
+    public Recipe(String title, int portions, int time, String instruction, String author, String imageUrl, int likes, int amountOfIngredients, LocalDate addOrEditDate, RecipeCategory category, DifficultyLevel level) {
+        this.title = title;
+        this.portions = portions;
+        this.time = time;
+        this.instruction = instruction;
+        this.author = author;
+        this.imageUrl = imageUrl;
+        this.likes = likes;
+        this.amountOfIngredients = amountOfIngredients;
+        this.addOrEditDate = addOrEditDate;
+        this.category = category;
+        this.level = level;
+    }
+
 
     public int getAmountOfIngredients() {
         return amountOfIngredients;

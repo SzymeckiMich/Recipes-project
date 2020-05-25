@@ -20,6 +20,12 @@ public class Ingredient {
     public Ingredient() {
     }
 
+    public Ingredient(String name, double quantity, QuantityUnit unit){
+        this.name = name;
+        this.quantity = quantity;
+        this.unit = unit;
+    }
+
     public Long getId() {
         return id;
     }

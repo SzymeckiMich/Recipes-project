@@ -1,11 +1,13 @@
 package com.example.demo.recipeController;
 
+import com.example.demo.model.Ingredient;
 import com.example.demo.model.Recipe;
 import com.example.demo.service.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -25,6 +27,16 @@ public class RecipeController {
         return "firstForm";
    }
 
+    @PostMapping("/add")
+    public String addRecipe(Model model, Recipe recipe){
+        model.addAttribute("recipe", recipe);
+        model.addAttribute("mode", "add");
+        for(int i = 0; i<recipe.getAmountOfIngredients(); i++){
+            model.addAttribute(String.valueOf(i), new Ingredient());
+        }
+        return "secondForm";
+    }
+
     @GetMapping("/edit")
     public String edit(Model model, @RequestParam long id) {
         Recipe recipe = recipeService.findById(id);
@@ -32,8 +44,6 @@ public class RecipeController {
         model.addAttribute("mode", "edit");
         return "firstForm";
     }
-
-
 
 
     @GetMapping("/allByLiked")

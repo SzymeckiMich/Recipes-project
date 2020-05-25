@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj przepis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+</head>
+<body>
+<header th:insert="navbar.html :: navbar"></header>
+
+
+
+<ul>
+    <li th:each="key: ${listOfKeys}"">
+    <span th:text="${key}"></span> = <span th:text="${map.get(key)}"></span>
+    </li>
+</ul>
+
+
+
+
+
+Składnik: <input type="text" th:field="*{ingredient.name}">
+Ilość:<input type="number" th:field="*{ingredient.quantity}">
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label">Jednostka miary</label>
+    <div class="col-sm-10">
+        <select class="form-control" th:field="*{ingredient.unit}">
+            <option disabled selected value="">Wybierz..</option>
+            <option value="ml">ml</option>
+            <option value="l">l</option>
+            <option value="kg">kg</option>
+            <option value="g">g</option>
+            <option value="spoon">łyżka</option>
+            <option value="teaspoon">łyżeczka</option>
+            <option value="glass">szklanka</option>
+            <option value="pinch">szczypta</option>
+            <option value="piece">sztuka</option>
+        </select>
+    </div>
+</div>
+
+
+</body>
+</html>
