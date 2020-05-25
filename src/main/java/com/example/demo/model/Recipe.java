@@ -1,7 +1,10 @@
 package com.example.demo.model;
 
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -18,9 +21,13 @@ public class Recipe {
     private String author;
     private String imageUrl;
     private int likes;
+    private int amountOfIngredients;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate addOrEditDate;
 
     @Enumerated(value = EnumType.STRING)
-    private Category category;
+    private RecipeCategory category;
 
     @Enumerated(value = EnumType.STRING)
     private DifficultyLevel level;
@@ -31,8 +38,24 @@ public class Recipe {
     public Recipe() {
     }
 
+    public int getAmountOfIngredients() {
+        return amountOfIngredients;
+    }
+
+    public void setAmountOfIngredients(int amountOfIngredients) {
+        this.amountOfIngredients = amountOfIngredients;
+    }
+
     public Long getId() {
         return id;
+    }
+
+    public LocalDate getAddOrEditDate() {
+        return addOrEditDate;
+    }
+
+    public void setAddOrEditDate(LocalDate addOrEditDate) {
+        this.addOrEditDate = addOrEditDate;
     }
 
     public void setId(Long id) {
@@ -95,11 +118,11 @@ public class Recipe {
         this.likes = likes;
     }
 
-    public Category getCategory() {
+    public RecipeCategory getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(RecipeCategory category) {
         this.category = category;
     }
 

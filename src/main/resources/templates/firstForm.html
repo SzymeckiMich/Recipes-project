@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj przepis</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+
+    <form th:action="${mode == 'edit' ? '/edit' : '/add'} " method="post" th:object="${recipe}">
+        <input type="hidden" th:field="*{id}"/>
+
+        Tytuł: <input class="form-control" type="text" th:field="*{title}">
+        Porcje: <input class="form-control" type="number" th:field="*{portions}">
+        Czas: <input class="form-control" type="number" th:field="*{time}">
+        Link do zdjęcia: <input class="form-control" type="url" th:field="*{imageUrl}"></br>
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Poziom trudności zadania</label>
+            <div class="col-sm-10">
+                <select class="form-control" th:field="*{level}">
+                    <option disabled selected value="">Wybierz...</option>
+                    <option value="EASY">Łatwizna</option>
+                    <option value="MEDIUM">Średnie</option>
+                    <option value="ADVANCED">Zaawansowane</option>
+                    <option value="HARD">HARDKOR</option>
+                </select>
+            </div>
+        </div>
+
+
+        Ilość składników: <input class="form-control" type="number" th:field="*{amountOfIngredients}"></br>
+
+
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Rodzaj dania</label>
+            <div class="col-sm-10">
+                <select class="form-control" th:field="*{category}">
+                    <option disabled selected value="">Wybierz...</option>
+                    <option value="BREAKFAST">Śniadanie</option>
+                    <option value="DINNER">Obiad</option>
+                    <option value="SUPPER">Kolacja</option>
+                    <option value="DESSERT">Deser</option>
+                    <option value="SNACK">Przekąska</option>
+                </select>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

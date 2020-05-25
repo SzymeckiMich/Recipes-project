@@ -1,5 +1,5 @@
 package com.example.demo.model;
 
-public enum Category {
+public enum RecipeCategory {
     BREAKFAST, DINNER, SUPPER, DESSERT, SNACK
 }
