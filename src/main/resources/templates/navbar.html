@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>navbar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+
+
+<div th:fragment="navbar">
+    <div class="header">
+
+                        <a href="/">
+                            <button class="button" style="background: rgba(0, 0, 0, 0.0)">
+                            <img src="przepysztaWhite%20—%20kopia.png" width="206.85" height="70">
+                            </button>
+                        </a>
+
+                        <a href="/">
+                            <button class="button">
+                                <img src="addButton.png" width="135" height="30">
+<!--                                <span>Dodaj przepis</span>-->
+                            </button>
+                        </a>
+
+        <a href="/">
+            <button class="button">
+                <span>Dodaj jakiś przepis</span>
+            </button>
+        </a>
+
+        <a href="/">
+            <button class="button">
+                <span>Pokaż od najlepszego</span>
+            </button>
+        </a>
+
+        <a href="/">
+            <button class="button">
+                <span>Pokaż od najnowszego</span>
+            </button>
+        </a>
+
+        <a href="/">
+            <button class="button">
+                <span>Wybierz kategorię</span>
+            </button>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
