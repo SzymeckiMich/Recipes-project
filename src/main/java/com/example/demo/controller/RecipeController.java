@@ -1,7 +1,9 @@
-package com.example.demo.recipeController;
+package com.example.demo.controller;
 
 import com.example.demo.model.Ingredient;
 import com.example.demo.model.Recipe;
+import com.example.demo.repository.IngredientRepository;
+import com.example.demo.service.IngredientService;
 import com.example.demo.service.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,14 +12,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.time.LocalDateTime;
+
 @Controller
 public class RecipeController {
 
     private RecipeService recipeService;
+    public IngredientService ingredientService;
 
     @Autowired
-    public RecipeController(RecipeService recipeService){
+    public RecipeController(RecipeService recipeService, IngredientService ingredientService){
         this.recipeService=recipeService;
+        this.ingredientService = ingredientService;
     }
 
    @GetMapping("/add")
@@ -28,13 +34,15 @@ public class RecipeController {
    }
 
     @PostMapping("/add")
-    public String addRecipe(Model model, Recipe recipe){
-        model.addAttribute("recipe", recipe);
-        model.addAttribute("mode", "add");
-        for(int i = 0; i<recipe.getAmountOfIngredients(); i++){
-            model.addAttribute(String.valueOf(i), new Ingredient());
-        }
-        return "secondForm";
+    public String addRecipe(Recipe recipe, Model model){
+        recipe.setAddOrEditDate(LocalDateTime.now());
+        recipeService.save(recipe);
+
+        Ingredient ingredient = new Ingredient();
+        ingredient.setRecipe(recipe);
+        model.addAttribute("ingredient", ingredient);
+//        model.addAttribute("recipe", recipe);
+        return "ingredientForm";
     }
 
     @GetMapping("/edit")
@@ -45,15 +53,31 @@ public class RecipeController {
         return "firstForm";
     }
 
-
     @GetMapping("/allByLiked")
     public String allByLiked(Model model){
         model.addAttribute("list", recipeService.findAllByLiked());
         return "list";
     }
+
     @GetMapping("/allByNewest")
     public String allByNewest(Model model){
         model.addAttribute("list", recipeService.findAllByNewest());
         return "list";
+    }
+
+    @GetMapping("/addIngredient")
+    public String addingredient(Model model, Recipe recipe) {
+        model.addAttribute("ingredient", new Ingredient());
+        model.addAttribute("recipe", recipe);
+
+        return "ingredientForm";
+    }
+
+    @PostMapping("/addIngredient")
+    public String addIngredient(Ingredient ingredient, Recipe recipe, Model model){
+        model.addAttribute("recipe", recipe);
+        ingredientService.save(ingredient);
+
+        return "Success";
     }
 }

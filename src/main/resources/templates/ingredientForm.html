@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj składnik</title>
+</head>
+<body>
+
+<form action="/addIngredient" method="post" th:object="${ingredient}">
+
+    Nazwa; <input type="text" th:field="*{name}">
+    Ilość <input type="number" th:field="*{quantity}">
+    Jednostka: <input type="text" th:field="*{unit}">
+
+    <input type="hidden" th:field="*{recipe}"/>
+
+<input type="submit" value="Dodaj">
+</form>
+
+
+<!--TODO ogarnąć dodawanie składnika zaraz po zapisaniu przepisu i następnie dodawanie składnika po składniku na tej samej metodzie poprzez przekazywanie id przepisu w requestParamie -->
+
+</body>
+</html>

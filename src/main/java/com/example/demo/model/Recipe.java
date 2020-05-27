@@ -5,6 +5,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
@@ -21,10 +22,10 @@ public class Recipe {
     private String author;
     private String imageUrl;
     private int likes;
-    private int amountOfIngredients;
+//    private int amountOfIngredients;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate addOrEditDate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm")
+    private LocalDateTime addOrEditDate;
 
     @Enumerated(value = EnumType.STRING)
     private RecipeCategory category;
@@ -38,7 +39,7 @@ public class Recipe {
     public Recipe() {
     }
 
-    public Recipe(String title, int portions, int time, String instruction, String author, String imageUrl, int likes, int amountOfIngredients, LocalDate addOrEditDate, RecipeCategory category, DifficultyLevel level) {
+    public Recipe(String title, int portions, int time, String instruction, String author, String imageUrl, int likes, int amountOfIngredients, LocalDateTime addOrEditDate, RecipeCategory category, DifficultyLevel level) {
         this.title = title;
         this.portions = portions;
         this.time = time;
@@ -46,30 +47,30 @@ public class Recipe {
         this.author = author;
         this.imageUrl = imageUrl;
         this.likes = likes;
-        this.amountOfIngredients = amountOfIngredients;
+//        this.amountOfIngredients = amountOfIngredients;
         this.addOrEditDate = addOrEditDate;
         this.category = category;
         this.level = level;
     }
 
 
-    public int getAmountOfIngredients() {
-        return amountOfIngredients;
-    }
+//    public int getAmountOfIngredients() {
+//        return amountOfIngredients;
+//    }
 
-    public void setAmountOfIngredients(int amountOfIngredients) {
-        this.amountOfIngredients = amountOfIngredients;
-    }
+//    public void setAmountOfIngredients(int amountOfIngredients) {
+//        this.amountOfIngredients = amountOfIngredients;
+//    }
 
     public Long getId() {
         return id;
     }
 
-    public LocalDate getAddOrEditDate() {
+    public LocalDateTime getAddOrEditDate() {
         return addOrEditDate;
     }
 
-    public void setAddOrEditDate(LocalDate addOrEditDate) {
+    public void setAddOrEditDate(LocalDateTime addOrEditDate) {
         this.addOrEditDate = addOrEditDate;
     }
 

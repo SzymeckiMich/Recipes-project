@@ -37,4 +37,8 @@ public class RecipeService {
         TypedQuery<Recipe> query = entityManager.createQuery("SELECT r FROM Recipe r WHERE r.id = " + id, Recipe.class);
         return query.getSingleResult();
     }
+
+    public void save(Recipe recipe) {
+        recipeRepository.save(recipe);
+    }
 }
