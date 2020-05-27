@@ -78,6 +78,6 @@ public class RecipeController {
         model.addAttribute("recipe", recipe);
         ingredientService.save(ingredient);
 
-        return "Success";
+        return "ingredientForm";
     }
 }
