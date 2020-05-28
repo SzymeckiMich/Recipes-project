@@ -22,7 +22,7 @@ public class Recipe {
     private String author;
     private String imageUrl;
     private int likes;
-//    private int amountOfIngredients;
+    private int amountOfIngredients;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm")
     private LocalDateTime addOrEditDate;
@@ -54,13 +54,13 @@ public class Recipe {
     }
 
 
-//    public int getAmountOfIngredients() {
-//        return amountOfIngredients;
-//    }
+    public int getAmountOfIngredients() {
+        return amountOfIngredients;
+    }
 
-//    public void setAmountOfIngredients(int amountOfIngredients) {
-//        this.amountOfIngredients = amountOfIngredients;
-//    }
+    public void setAmountOfIngredients(int amountOfIngredients) {
+        this.amountOfIngredients = amountOfIngredients;
+    }
 
     public Long getId() {
         return id;
